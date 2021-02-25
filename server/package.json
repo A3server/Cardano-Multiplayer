@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server Side game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "webpack --config prod.config.js"
+  },
+  "author": "Ertemo, Polpy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodejs": "0.0.0"
+  }
+}
