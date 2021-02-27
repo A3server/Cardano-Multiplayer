@@ -14,26 +14,30 @@ const mainapp = () => {
     let outsidewall4;
 
     function setup (p5, canvasParentRef) {
-        //Canvas of size 1000x800 
+        //Canvas of size 1000x800
         let canvas = p5.createCanvas(1000, 800).parent(canvasParentRef);
+        //initializing map and player
         player = new Player(p5, 0, 0);
         wall = new Wall(new Vector(p5.random(canvas.width), p5.random(canvas.height)), new Vector(p5.random(canvas.width), p5.random(canvas.height)));
         wall2 = new Wall(new Vector(p5.random(canvas.width), p5.random(canvas.height)), new Vector(p5.random(canvas.width), p5.random(canvas.height)));
         //p5.frameRate(10);
-        console.log(canvas.width);
+        //boundery walls
         outsidewall1 = new Wall(new Vector(0, 0), new Vector(0, canvas.height));
         outsidewall2 = new Wall(new Vector(0, 0), new Vector(canvas.width, 0));
         outsidewall3 = new Wall(new Vector(canvas.width, 0), new Vector(canvas.width, canvas.height));
         outsidewall4 = new Wall(new Vector(0, canvas.height), new Vector(canvas.width, canvas.height));
     };
+    //draw function, draws to the screnn
     function draw (p5) {
         p5.background(51);
-        player.update(p5); // TIRAR A WALL
+        player.update(p5);
         player.display(p5);
         for(let wall of Wall.getWalls()){
             wall.display(p5);
         }
     };
+
+    //function is called when any key is pressed
     function keyPressed(p5){
         if(p5.keyCode === p5.UP_ARROW){
             player.dir(0,-1);
@@ -48,6 +52,8 @@ const mainapp = () => {
             player.dir(-1,0);
         }
     }
+    
+    //function is called when any key is released
     function keyReleased() {
         player.dir(0,0);
     }
