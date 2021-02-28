@@ -3,17 +3,22 @@ import {Vector} from "p5";
 
 class Ray{
     constructor(startp, dir){
+        //starting point
         this.startp = startp;
         this.dir = dir;
+
+        //casted point
         this.cPoint = new Vector(0,0);//this.cast();
         
     }
 
+    //draws ray directions
     display(p5){
         p5.stroke(255);
         p5.line(this.startp.x, this.startp.y, this.startp.x + this.dir.x * 10, this.startp.y + this.dir.y * 10);
     }
 
+    //draws raycasts
     showCast(p5){
         if(this.cPoint){
             //console.log("HIT");
@@ -22,6 +27,7 @@ class Ray{
         }  
     }
 
+    //casts the ray to everywall and equals thiss.cPoint the closest collision point
     cast(){
         let record = Infinity;
         let closest = null;
@@ -40,6 +46,7 @@ class Ray{
         this.cPoint = closest;
     }
 
+    //casts the ray to the given wall and returns the closest point
     singleCast(wall){
         const endpx = this.startp.x + this.dir.x;
         const endpy = this.startp.y + this.dir.y;
