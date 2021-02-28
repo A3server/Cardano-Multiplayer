@@ -1,0 +1,48 @@
+@font-face {
+  font-family: fonteLabel;
+  src: url(../font/Chivo-Bold.ttf);
+}
+
+.button {
+  font-family: fonteLabel;
+  position: relative;
+  width: 35%;
+  height: 3vh;
+  left: 50%;
+  margin-top: 5vh;
+  font-size: 2vh;
+  letter-spacing: 0.01em;
+
+  background: #125fc4;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+}
+
+.LoginStr {
+  right: 7vh;
+  width: 60%; /* 35*2 */
+  background: #ffffff;
+  color: #3782bb;
+}
+
+.RegistarStr {
+  right: 13.5vh;
+  width: 57%;
+  background: #0091ff;
+  color: #ffffff;
+}
+
+@media (min-width: 500px) and (max-width: 650px) {
+  .button {
+    width: 25%;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 960px) {
+  .button {
+    width: 20%;
+  }
+}

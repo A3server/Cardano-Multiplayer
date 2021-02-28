@@ -1,0 +1,166 @@
+/*.App {
+  text-align: center;
+}*/
+
+@font-face {
+  font-family: fonteTitulo;
+  src: url(../font/Chivo-Bold.ttf);
+}
+
+@font-face {
+  font-family: fonteLabel;
+  src: url(../font/Chivo-Black.ttf);
+}
+@font-face {
+  font-family: fontenormal;
+  src: url(../font/Chivo-Regular.ttf);
+}
+
+/* -------------- Front Page -------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#Background {
+  /* background */
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background: radial-gradient(
+    179.64% 179.64% at 50% 50%,
+    #bcc8fa 0%,
+    #6ea6f0 100%
+  );
+}
+
+@media (min-width: 601px) {
+  #btns {
+    position: relative;
+    top: 45%;
+    left: 0%;
+    display: inline-flex;
+
+    width: 100%;
+  }
+  .App-logo-mainmenu {
+    /* logo*/
+    position: relative;
+    width: 40%;
+    height: auto;
+    left: 0%;
+    top: 33%;
+    display: block;
+    margin: auto;
+    /* sombra base */
+
+    filter: drop-shadow(4px 4px 25px rgba(0, 0, 0, 0.1));
+  }
+  .button {
+    margin-left: 0vw !important;
+    left: 16% !important;
+    width: 70% !important;
+  }
+
+  .buttons {
+    left: 50% !important;
+    width: 100%; /*importante */
+    height: 60% !important;
+    top: 0%;
+  }
+
+  #btns a {
+    width: 15%; /* mudar a width aqui */
+    height: 100%;
+    left: 35.8%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+  .App-logo-mainmenu {
+    /* logo*/
+    position: relative;
+    width: 70%;
+    height: auto;
+    left: 0%;
+    top: 40%;
+    display: block;
+    margin: auto;
+    /* sombra base */
+
+    filter: drop-shadow(4px 4px 25px rgba(0, 0, 0, 0.1));
+  }
+
+  #btns {
+    position: relative;
+    top: 60%;
+    display: inline-flex;
+    width: 100%;
+  }
+  .button {
+    margin-left: 0vw !important;
+    left: 39.5% !important;
+    width: 70% !important;
+  }
+
+  .buttons {
+    left: 60% !important;
+    width: 100%; /*importante */
+    height: 60% !important;
+    top: 0%;
+  }
+
+  #btns a {
+    width: 40%; /* mudar a width aqui */
+    height: 100%;
+    left: 0%;
+  }
+}
+@media (min-width: 0px) and (max-width: 400px) {
+  .App-logo-mainmenu {
+    /* logo*/
+    position: relative;
+    width: 85%;
+    height: auto;
+    left: 43%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 40%;
+    display: block;
+    margin: auto;
+    /* sombra base */
+
+    filter: drop-shadow(4px 4px 25px rgba(0, 0, 0, 0.1));
+  }
+
+  #btns {
+    position: relative;
+    top: 65vh;
+    display: inline-flex;
+    width: 100%;
+  }
+  .button {
+    margin-left: 0vw !important;
+    left: 16% !important;
+    width: 70% !important;
+  }
+
+  .buttons {
+    left: 50% !important;
+    width: 100%; /*importante */
+    height: 60% !important;
+    top: 0%;
+  }
+
+  #btns a {
+    width: 50%; /* mudar a width aqui */
+    height: 100%;
+    left: 0%;
+  }
+}

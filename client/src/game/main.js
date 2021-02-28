@@ -1,7 +1,7 @@
 import { Vector } from "p5";
 import React from "react";
 import Sketch from "react-p5";
-import Player from "./Player";
+import Player from "./player"; //wtf gouveia estava com letra maiscula
 import Wall from "./Wall";
 //import Ray from "./Ray"
 const mainapp = () => {
