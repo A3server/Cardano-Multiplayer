@@ -9,7 +9,9 @@ class Ray{
 
         //casted point
         this.cPoint = new Vector(0,0);//this.cast();
-        
+        this.distance = null;
+        this.objectHit = null;
+        this.angle = new Vector(1,0).angleBetween(dir);
     }
 
     //draws ray directions
@@ -31,6 +33,7 @@ class Ray{
     cast(){
         let record = Infinity;
         let closest = null;
+        let hit = null;
         for(let wall of Wall.getWalls()){
             let pt = this.singleCast(wall);
             if(pt){
@@ -39,10 +42,13 @@ class Ray{
                 if (d<record){
                     record = d;
                     closest = pt;
+                    hit = wall
                 }
             }
         }
         //console.log(closest);
+        this.objectHit = hit;
+        this.distance = record;
         this.cPoint = closest;
     }
 
@@ -64,7 +70,6 @@ class Ray{
         }else{
             return;
         }
-    
     }
 }
 

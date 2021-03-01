@@ -10,9 +10,10 @@ class Player{
         this.speed = new Vector(0,0);
 
         this.rays = [];
+        this.fov = 60;
 
         //initializes player raycasts
-        for(let a = 0; a < 360; a += 1){
+        for(let a = -this.fov/2; a < this.fov/2; a += 0.1){
           this.rays.push(this.getRay(Vector.fromAngle(p5.radians(a))));
         }
         //this.rays.push(this.getRay(Vector.fromAngle(p5.radians(0))))
@@ -24,8 +25,8 @@ class Player{
       let scl = 10;
       this.pos.x += this.speed.x*scl;
       this.pos.y += this.speed.y*scl;
-      this.pos.x = p5.constrain(this.pos.x, 0, p5.width - scl);
-      this.pos.y = p5.constrain(this.pos.y, 0, p5.height - scl);
+      this.pos.x = p5.constrain(this.pos.x, 0, p5.width/2);
+      this.pos.y = p5.constrain(this.pos.y, 0, p5.height);
 
       //casting a casting the rays every frame
       for(let ray of this.rays){
