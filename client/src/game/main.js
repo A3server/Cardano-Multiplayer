@@ -3,17 +3,20 @@ import React from "react";
 import Sketch from "react-p5";
 import Player from "./player"; //wtf gouveia estava com letra maiscula
 import Wall from "./Wall";
+
 //import Ray from "./Ray"
 const mainapp = () => {
     let player;
     let tempWall;
+    let canvas;
     let canvasW;
     let canvasH;
     function setup (p5, canvasParentRef) {
         //Canvas of size 1000x800
-        let canvas = p5.createCanvas(1600, 800).parent(canvasParentRef);
+        canvas = p5.createCanvas(1600, 800).parent(canvasParentRef);
         canvasW = canvas.width/2;
         canvasH = canvas.height;
+
         //initializing map and player
         player = new Player(p5, 0, 0);
         new Wall(new Vector(p5.random(canvasW), p5.random(canvasH)), new Vector(p5.random(canvasW), p5.random(canvasH)));
@@ -42,7 +45,7 @@ const mainapp = () => {
             let ray = player.rays[i];
             let lineH;
             if(ray.objectHit){
-                lineH = (ray.objectHit.height * canvasH) /(ray.distance * p5.cos(ray.angle));
+                lineH = (ray.objectHit.height * canvasH) /(ray.distance * p5.cos(ray.angleOffset));
                 offsetH = canvasH/2-lineH/2;
                 //console.log(offsetH, lineH, lineH+offsetH);
                 p5.stroke(ray.objectHit.color);
@@ -53,27 +56,11 @@ const mainapp = () => {
         }
         p5.pop();
     };
-
-    //function is called when any key is pressed
-    function keyPressed(p5){
-        if(p5.keyCode === p5.UP_ARROW){
-            player.dir(0,-1);
-        }
-        else if(p5.keyCode === p5.DOWN_ARROW){
-            player.dir(0,1);
-        }
-        else if(p5.keyCode === p5.RIGHT_ARROW){
-            player.dir(1,0);
-        }
-        else if(p5.keyCode === p5.LEFT_ARROW){
-            player.dir(-1,0);
-        }
-    }
     
     //function is called when any key is released
-    function keyReleased() {
-        player.dir(0,0);
-    }
+    // function keyReleased() {
+    //     player.setSpeed(0);
+    // }
 
     function mouseDragged(p5) {
         tempWall.p2 = new Vector(p5.mouseX, p5.mouseY);
@@ -83,9 +70,19 @@ const mainapp = () => {
         tempWall = new Wall(new Vector(p5.mouseX, p5.mouseY),new Vector(p5.mouseX, p5.mouseY))
     }
 
+    function keyPressed(p5) {
+        if (p5.keyCode === p5.ESCAPE) {
+            p5.exitPointerLock();
+        } else if (p5.keyCode === 76) {
+            console.log("l");
+            p5.requestPointerLock();
+        }
+        console.log("pressed");
+      }
+
     return (
         <div className="App">
-      <Sketch setup={setup} draw={draw} keyPressed={keyPressed} keyReleased={keyReleased} mouseDragged={mouseDragged} mousePressed={mousePressed} className="App" />
+      <Sketch setup={setup} draw={draw} keyPressed={keyPressed} mouseDragged={mouseDragged} mousePressed={mousePressed} className="App" />
     </div>
 
     )
