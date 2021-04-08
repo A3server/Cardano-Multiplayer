@@ -1,0 +1,75 @@
+/*.App {
+  text-align: center;
+}*/
+
+@font-face {
+  font-family: fonteTitulo;
+  src: url(../font/Chivo-Bold.ttf);
+}
+
+@font-face {
+  font-family: fonteLabel;
+  src: url(../font/Chivo-Black.ttf);
+}
+@font-face {
+  font-family: fontenormal;
+  src: url(../font/Chivo-Regular.ttf);
+}
+
+/* -------------- Front Page -------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* -------------- Front Page -------------------*/
+.buttonsHomePage {
+  font-family: fonteLabel;
+  text-decoration: none;
+
+  position: relative;
+
+  width: 100%;
+  height: 5vh;
+
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25em;
+  border: 1px solid rgb(242, 242, 242);
+  cursor: pointer;
+  outline: none;
+}
+.Background {
+  /* background */
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background: #19364f;
+}
+
+@media (min-width: 961px) {
+  .btns {
+    position: relative;
+    top: 70%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+
+    width: auto;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 960px) {
+  .btns {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+  }
+}

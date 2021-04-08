@@ -1,0 +1,34 @@
+@font-face {
+  font-family: fonteLabel;
+  src: url(../font/Chivo-Bold.ttf);
+}
+
+.button {
+  font-family: fonteLabel;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.Connectstr {
+  width: 5em;
+  background: #00000000;
+  color: #ffffff;
+}
+
+.Playstr {
+  width: 5em;
+  background: #00000000;
+  color: #ffffff;
+}
+
+.Connectstr:hover {
+  background-color: rgb(99, 99, 99);
+}
+.Playstr:hover {
+  background-color: rgb(99, 99, 99);
+}
